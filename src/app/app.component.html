@@ -1,3 +1,11 @@
 <h1>
   {{title}}
 </h1>
+
+<div class="section bd-example">
+  <div class="col-sm-4">
+    <small><em>CPU Usage</em></small>
+    <progressbar [value]="cpuUsage" type="success"><b>{{cpuUsage}}%</b></progressbar>
+    <span *ngIf="cpuDown" class="label label-danger">CPU SERVER DOWN</span>
+  </div>
+</div>

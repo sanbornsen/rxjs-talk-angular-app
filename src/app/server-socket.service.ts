@@ -9,8 +9,8 @@ import 'rxjs/add/operator/delay';
 
 @Injectable()
 export class ServerSocket {
-  private inputStream: QueueingSubject<any>
-  public messages: Observable<any>
+  private inputStream: QueueingSubject<any>;
+  public messages: Observable<any>;
 
   public connect() {
     if (this.messages) {
@@ -23,10 +23,10 @@ export class ServerSocket {
     this.messages = websocketConnect(
       'ws://127.0.0.1:8001',
       this.inputStream = new QueueingSubject<any>()
-    ).messages.retryWhen(errors => errors.delay(1000)).share();
+    ).messages.share();
   }
 
-  public send(message: any):void {
+  public send(message: any): void {
     // If the websocket is not connected then the QueueingSubject will ensure
     // that messages are queued and delivered when the websocket reconnects.
     // A regular Subject can be used to discard messages sent when the websocket

@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { ProgressbarModule, ProgressbarConfig } from 'ngx-bootstrap';
+
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -13,10 +15,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    ProgressbarModule
   ],
   providers: [
-    ServerSocket
+    ServerSocket,
+    ProgressbarConfig
   ],
   bootstrap: [AppComponent]
 })
