@@ -1,6 +1,8 @@
-<h1>
-  {{title}}
-</h1>
+<div class="page-header">
+  <h4>
+    {{title}} <small>{{subTitle}}</small>
+  </h4>
+</div>
 
 <div class="section bd-example">
   <div class="col-sm-4">
@@ -10,5 +12,6 @@
       <b>{{cpuUsage}}%</b>
     </progressbar>
     <span *ngIf="cpuDown" class="label label-danger">CPU SERVER DOWN</span>
+    <span *ngIf="!cpuDown" class="label label-success">CPU SERVER ONLINE</span>
   </div>
 </div>

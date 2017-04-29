@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   private cpuUsage: String = '0';
   private cpuDown: Boolean = false;
   title = 'System Monitor';
+  subTitle = 'Just to show how awesome RxJS is';
   constructor(private socket: ServerSocket) {
 
   }
